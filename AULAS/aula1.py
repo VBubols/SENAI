@@ -1,0 +1,11 @@
+idade = int(input("Digite a sua idade: "))
+salario = float(input("Digite seu salário: "))
+nome = input("Digite seu nome: ")
+letra = input("Digite seu sexo: ")
+aluno = bool(input("Você é um aluno? (True/False): "))
+
+print(f"Idade: {idade}")
+print(f"Salário: {salario}")
+print(f"Nome: {nome}")
+print(f"Sexo: {letra}")
+print(f"Aluno: {aluno}")
