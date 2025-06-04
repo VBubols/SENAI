@@ -1,46 +1,44 @@
-let +tensao, +corrente, +resistencia 
-
-// function calcular(){
-//     resistencia = document.getElementById("resistencia").value
-//     corrente = document.getElementById("corrente").value
-//     tensao = document.getElementById("tensao").value
-//     resistencia = tensao / corrente
-//     document.getElementById("tensao").value = tensao
-//     document.getElementById("corrente").value = corrente
-// }
+let tensao, corrente, resistencia 
 
 function calcular(){
-    resistencia = document.getElementById("resistencia").value
-    tensao = document.getElementById("tensao").value
-    corrente = document.getElementById("corrente").value
+    tensao = parseFloat(document.getElementById("tensao").value)
+    corrente = parseFloat(document.getElementById("corrente").value)  
+    resistencia = parseFloat(document.getElementById("resistencia").value)
+
+    const tensaoNan = isNaN(tensao);
+    const correnteNan = isNaN(corrente);
+    const resistenciaNan = isNaN(resistencia);
 
     //Calculo da corrente
-    if(document.getElementById("corrente").value == ""){
-        corrente = tensao / resistencia
-        document.getElementById("resistencia").value = resistencia
-        document.getElementById("tensao").value = tensao
-        document.getElementById("corrente").value = corrente
-    //Calculo da tensao
-    }else if(document.getElementById("tensao").value == ""){
-        tensao = resistencia * corrente
-        document.getElementById("resistencia").value = resistencia
-        document.getElementById("tensao").value = tensao
-        document.getElementById("corrente").value = corrente
-    //Calculo da resistencia
-    }else if(document.getElementById("resistencia").value == ""){
-        resistencia = tensao / corrente
-        document.getElementById("resistencia").value = resistencia
-        document.getElementById("tensao").value = tensao
-        document.getElementById("corrente").value = corrente
-    }else if(document.getElementById("corrente").value != "" && document.getElementById("tensao").value != "" && document.getElementById("resistencia").value != ""){
+    if(!tensaoNan && !correnteNan && !resistenciaNan){
         alert("Digite apenas dois valores realizar o cálculo!")
+    }else if(correnteNan && !tensaoNan && !resistenciaNan){
+        corrente = tensao / resistencia
+        definirValores(resistencia, tensao, corrente)
+
+    //Calculo da tensao
+    }else if(tensaoNan && !resistenciaNan && !correnteNan){
+        tensao = resistencia * corrente
+        definirValores(resistencia, tensao, corrente)
+        
+    //Calculo da resistencia
+    }else if(resistenciaNan && !tensaoNan && !correnteNan){
+        resistencia = tensao / corrente
+        definirValores(resistencia, tensao, corrente)
+
     }else{
         alert("ERRO! Digite ao menos dois valores para realizar o cálculo")
     }
 }
 
 function redefinir(){
-    document.getElementById("resistencia").value = " "
-    document.getElementById("tensao").value = " "
-    document.getElementById("corrente").value = " "
+    document.getElementById("resistencia").value = ""
+    document.getElementById("tensao").value = ""
+    document.getElementById("corrente").value = ""
+}
+
+function definirValores(resistencia, tensao, corrente){
+    document.getElementById("resistencia").value = resistencia
+    document.getElementById("tensao").value = tensao
+    document.getElementById("corrente").value = corrente
 }
