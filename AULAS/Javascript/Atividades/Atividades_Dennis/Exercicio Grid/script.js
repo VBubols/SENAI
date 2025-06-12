@@ -12,7 +12,7 @@ tarefa_lista = [{
     "titulo": "Criar estrutura",
     "descricao": "Criar a estrutura do site com HTML",
     "status": "pronto"
-}]
+}];
 
 function printar(){
     let coluna_fazer = document.getElementById("coluna_fazer")
@@ -25,18 +25,19 @@ function printar(){
     coluna_pronto.innerHTML = "<h2>Pronto</h2>"
 
     tarefa_lista.forEach((tarefa, index) => {
-       console.log(tarefa.descricao, index)
+       console.log(tarefa, index)
 
        let tarefas = document.createElement("div")
        tarefas.classList.add("tarefa")
+       tarefas.id = `${index}`
 
        tarefas.innerHTML = `
             <p>${tarefa.titulo}</p>
             <p>${tarefa.descricao}</p>
             <div class="botoes">
-                <button id="botao_fazer">A Fazer</button>
-                <button id="botao_fazendo">Fazendo</button>
-                <button id="botao_pronto">Pronto</button>
+                <button id="botao_fazer" onclick="mover(${index}, 'fazer')">A Fazer</button>
+                <button id="botao_fazendo" onclick="mover(${index}, 'fazendo')">Fazendo</button>
+                <button id="botao_pronto" onclick="mover(${index}, 'pronto')">Pronto</button>
             </div>
         `;  
 
@@ -51,3 +52,25 @@ function printar(){
 }
 
 printar()
+
+function mover(index, novoStatus){ 
+    tarefa_lista[index].status = novoStatus
+    printar()
+}
+
+
+function criar_tarefa(){
+    let tarefa_template = {
+        "titulo": "",
+        "descricao": "",
+        "status": "fazer"
+    };
+    
+    let novo_titulo = prompt("Digite o titulo da tarefa:")
+    let novo_descricao = prompt("Digite a descrição da tarefa:")
+
+    tarefa_template.titulo = novo_titulo;
+    tarefa_template.descricao = novo_descricao;
+    tarefa_lista.push(tarefa_template)
+    printar()
+}

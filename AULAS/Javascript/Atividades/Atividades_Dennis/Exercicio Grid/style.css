@@ -8,7 +8,16 @@ body {
 }
 
 .boa_vinda {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
+}
+
+.boa_vinda > button {
+    font-size: 16px;
+    padding: 2px;
+    margin: 3px auto;
 }
 
 .container {
@@ -31,9 +40,13 @@ body {
     background-color: #C9CCD0;
     border: 1px solid black;
     border-radius: 4px;
+    margin: 3px 1px;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-size: 16px;
     text-align: center;
-    margin: 5px;
 }
 
 .tarefa:hover {
@@ -42,6 +55,7 @@ body {
 
 .tarefa > p {
     margin: 5px;
+    white-space: normal;
 }
 
 .botoes {
@@ -54,7 +68,29 @@ body {
     padding: 2px;
 }
 
-.botoes > button:hover{
+button:hover{
     background-color: dodgerblue;
     color: #FEFEFE;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .coluna {
+        width: 95%;
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    .tarefa {
+        width: 95%;
+        max-width: 100%;
+        margin: 2px;
+    }
 }
