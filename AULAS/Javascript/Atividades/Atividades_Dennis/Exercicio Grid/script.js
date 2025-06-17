@@ -35,9 +35,9 @@ function printar(){
             <p>${tarefa.titulo}</p>
             <p>${tarefa.descricao}</p>
             <div class="botoes">
-                <button id="botao_fazer" onclick="mover(${index}, 'fazer')">A Fazer</button>
-                <button id="botao_fazendo" onclick="mover(${index}, 'fazendo')">Fazendo</button>
-                <button id="botao_pronto" onclick="mover(${index}, 'pronto')">Pronto</button>
+                <button onclick="mover(${index}, 'fazer')">A Fazer</button>
+                <button onclick="mover(${index}, 'fazendo')">Fazendo</button>
+                <button onclick="mover(${index}, 'pronto')">Pronto</button>
             </div>
         `;  
 
@@ -59,18 +59,35 @@ function mover(index, novoStatus){
 }
 
 
-function criar_tarefa(){
-    let tarefa_template = {
-        "titulo": "",
-        "descricao": "",
-        "status": "fazer"
-    };
+// function criar_tarefa(){
+//     let tarefa_template = {
+//         "titulo": "",
+//         "descricao": "",
+//         "status": "fazer"
+//     };
     
-    let novo_titulo = prompt("Digite o titulo da tarefa:")
-    let novo_descricao = prompt("Digite a descrição da tarefa:")
+//     let novo_titulo = prompt("Digite o titulo da tarefa:")
+//     let novo_descricao = prompt("Digite a descrição da tarefa:")
 
-    tarefa_template.titulo = novo_titulo;
-    tarefa_template.descricao = novo_descricao;
-    tarefa_lista.push(tarefa_template)
-    printar()
+//     tarefa_template.titulo = novo_titulo;
+//     tarefa_template.descricao = novo_descricao;
+//     tarefa_lista.push(tarefa_template)
+//     printar()
+// }
+
+let modal = document.getElementById("IDmodal")
+let criar = document.getElementById("criar")
+criar.onclick = function(){
+    modal.style.display = "block";
 }
+
+let span = document.getElementsByClassName("close")[0]
+span.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
