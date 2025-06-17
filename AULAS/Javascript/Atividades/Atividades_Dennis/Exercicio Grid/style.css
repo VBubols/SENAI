@@ -4,7 +4,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #164194;
 }
 
 .boa_vinda {
@@ -12,27 +13,38 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    color: #FEFEFE;
 }
 
 .boa_vinda > button {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
     font-size: 16px;
     padding: 2px;
     margin: 3px auto;
 }
 
+.link {
+    color: #FEFEFE;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color: dodgerblue;
+    background-color: #008BD2;
+    border-radius: 4px;
     padding: 10px;
+    justify-items: center;
     gap: 10px 20px;
 }
 
 .coluna {
     background-color: #f1f1f1;
     border: 1px solid black;
+    border-radius: 5px;
     padding: 10px;
     font-size: 16px;
+    width: 400px;
     text-align: center;
 }
 
@@ -64,13 +76,22 @@ body {
 }
 
 .botoes > button {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     padding: 2px;
 }
 
 button:hover{
-    background-color: dodgerblue;
+    background-color: #008BD2;
     color: #FEFEFE;
+}
+
+#logo {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto; 
 }
 
 @media only screen and (max-width: 768px) {
@@ -78,19 +99,18 @@ button:hover{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         padding: 5px;
     }
 
     .coluna {
-        width: 95%;
+        width: 75%;
         max-width: 100%;
         padding: 5px;
     }
 
     .tarefa {
-        width: 95%;
+        width: 100%;
         max-width: 100%;
-        margin: 2px;
     }
 }
