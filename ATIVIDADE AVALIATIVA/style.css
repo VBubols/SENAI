@@ -1,0 +1,64 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    background-color: #8dcdee;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.divImage, .description {
+    padding: 50px 40px;
+}
+
+.image {
+    max-height: 500px;
+    width: auto;
+}
+
+.description {
+    height: 50%;
+    width: 205px;
+}
+
+.bold {
+    text-align: center;
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button > a {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+a:hover{
+    background-color: #008BD2;
+    color: #FEFEFE;
+}
+
+footer {
+    text-align: center;
+}
