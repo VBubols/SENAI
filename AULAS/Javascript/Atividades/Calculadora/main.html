@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Calculadora</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Calculadora</h1>
+    </div>
+    <div class="calculator">
+        <input type="text" id="result" name="result" class="result">
+        <div class="line1">
+            <button id="dot" onclick="sendDigit('.')">.</button>
+            <button id="root" onclick="rootSqr()">√</button>
+            <button id="power" onclick="operation('n²')">n²</button>
+            <button id="division" onclick="operation('/')">/</button>
+        </div>
+        <div class="line2">
+            <button id="seven" onclick="sendDigit('7')">7</button>
+            <button id="eight" onclick="sendDigit('8')">8</button>
+            <button id="nine" onclick="sendDigit('9')">9</button>
+            <button id="multiplication" onclick="operation('x')">X</button>
+        </div>
+        <div class="line3">
+            <button id="four" onclick="sendDigit('4')">4</button>
+            <button id="five" onclick="sendDigit('5')">5</button>
+            <button id="six" onclick="sendDigit('6')">6</button>
+            <button id="subtraction" onclick="operation('-')">-</button>
+        </div>
+        <div class="line4">
+            <button id="one" onclick="sendDigit('1')">1</button>
+            <button id="two" onclick="sendDigit('2')">2</button>
+            <button id="three" onclick="sendDigit('3')">3</button>
+            <button id="sum" onclick="operation('+')">+</button>
+        </div>
+        <div class="line5">
+            <button id="delete" onclick="del()">DEL</button>
+            <button id="zero" onclick="sendDigit('0')">0</button>
+            <button id="equal" onclick="equal()">=</button>
+        </div>
+    </div>    
+</body>
+</html>
