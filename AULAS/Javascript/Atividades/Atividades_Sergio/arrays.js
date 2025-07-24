@@ -18,3 +18,7 @@
 let array = [12, 5, 27, 19, 21, 32, 14]
 const dobro = array.map((x) => x * 2)
 console.log(dobro.sort())
+
+const soma = (acumulador, atual) => acumulador + atual
+const result = dobro.reduce(soma)
+console.log(result)
