@@ -34,9 +34,14 @@
 //     console.log(i)
 // }
 
-let nome = ""
-let alunos = []
-while(nome != "fim"){
-    alunos.push(nome)
-    nome = prompt("Digite um nome: ")
+// let nome = ""
+// let alunos = []
+// while(nome != "fim"){
+//     alunos.push(nome)
+//     nome = prompt("Digite um nome: ")
+// }
+
+
+for(let i = 0 ; i < 5; i++){
+    console.log("Boas vindas")
 }
