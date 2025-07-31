@@ -1,4 +1,0 @@
-Atributos obrigatórios das contas:
-Dados do cliente > classe Cliente: nome completo & cpf
-Tipo de conta
-Valor disponível
