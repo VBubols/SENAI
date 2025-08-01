@@ -1,9 +1,8 @@
 export class Conta{
-    constructor(nomeCompleto, cpf, tipo, valor){
+    constructor(nomeCompleto, cpf, numeroConta){
         this._nomeCompleto = nomeCompleto
         this._cpf = cpf
-        this._tipo = tipo
-        this._valor = valor
+        this._numeroConta = numeroConta
     }
     get nomeCompleto(){
         return this._nomeCompleto
@@ -17,16 +16,10 @@ export class Conta{
     set cpf(cpf){
         this._cpf = cpf
     }
-    get tipo(){
-        return this._tipo
+    get numeroConta(){
+        return this._numeroConta
     }
-    set tipo(tipo){
-        this._tipo = tipo
-    }
-    get valor(){
-        return this._valor
-    }
-    set valor(valor){
-        this._valor = valor
+    set numeroConta(numeroConta){
+        this._numeroConta = numeroConta
     }
 }
