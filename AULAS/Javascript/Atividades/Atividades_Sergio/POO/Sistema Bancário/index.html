@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="./testes.js"></script>
+    <script type="module" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    
     <title>Document</title>
 </head>
 <body>
+    <h1>Sistema Bancário</h1>
     
+    <section class="cadastroConta">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF">
+        <select name="conta" id="conta">
+            <option value="corrente">Conta Corrente</option>
+            <option value="poupanca">Conta Poupança</option>
+        </select>
+        <label for="saldoInicial">Digite o saldo inicial da conta:</label>
+        <input type="number" name="saldoInicial" id="saldoInicial" placeholder="Digite o saldo inicial.">
+        <button id="criarConta">Criar conta</button>
+    </section>
+
+    <section class="operacoes">
+        <h2>Operações</h2>
+        <input type="text" id="idConta" placeholder="Digite o CPF da sua conta">
+        <button id="mostrarContaBtn">Mostrar Conta</button>
+        <button id="saqueBtn">Saque</button>
+        <button id="depositoBtn">Depósito</button>
+        <button id="pixBtn">PIX</button>
+        <div id="infoConta"></div>
+    </section>
 </body>
 </html>
